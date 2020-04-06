@@ -24,6 +24,11 @@ class Distance(Eda):
 
         return round(sum_tmp/len(self.ls), 2)
 
+    def mean(self):
+
+        val = self._mean()
+        return val
+
     def _var(self):
 
         tmp_mean = self._mean()
@@ -42,19 +47,19 @@ class Distance(Eda):
 class Distance2:
 
     def __init__(self):
-        return None
+        self.mean = self.mean()
 
-    def mean(self):
+    def mean(ls):
 
         sum_tmp = 0
-        for i in self:
+        for i in ls:
                 sum_tmp = sum_tmp + i
 
-        return round(sum_tmp/len(self), 2)
+        return round(sum_tmp/len(ls), 2)
 
-    def var(self):
+    def var(self, ls):
 
-        tmp_mean = mean(self)
+        tmp_mean = self.mean()
         
         tmp_sum = 0
         for i in ls:
